@@ -4,7 +4,7 @@ theme: research
 paginate: true
 ---
 
-# Workflow científico computacional leve
+# Workflow de Pesquisa Computacional
 
 Um exemplo de apresentação que continua sendo um arquivo Markdown `.md`.
 
