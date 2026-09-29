@@ -23,6 +23,8 @@ relatório e apresentação
 3. Veja os arquivos produzidos em `results/`.
 4. Abra o relatório em Markdown em `docs/report.md`.
 
+Para clonar o repositório e seguir esse caminho com os comandos e pré-requisitos reais, leia [Experimente este repositório](docs/quickstart.md).
+
 ## Uma estrutura pequena
 
 Comece separando as partes do trabalho:
@@ -52,13 +54,23 @@ A estrutura não é uma regra rígida. Ela só ajuda a localizar cada coisa quan
 
 ## Markdown para comunicar resultados
 
-O mesmo conteúdo em `.md` pode servir a mais de uma forma de comunicação:
+Markdown é um arquivo de texto simples. Você consegue lê-lo e editá-lo diretamente:
 
-- use [MyST](https://mystmd.org/) para visualizar o site ou gerar documentos;
-- use [Marp](https://marp.app/) para gerar slides a partir de Markdown;
-- recorra ao [Pandoc](https://pandoc.org/) quando precisar converter um documento para outro formato.
+````markdown
+# Resultado do experimento
 
-Os comandos e requisitos de cada rota estão em [Markdown e renderização](docs/markdown-rendering.md).
+Comparamos a solução numérica com a solução analítica.
+
+## Resultado
+
+O erro médio foi 2,1%.
+
+![Comparação das soluções](results/figures/comparison.svg)
+````
+
+Quando renderizado, o mesmo arquivo mostra um título, parágrafos e a figura como um documento comum. Ferramentas como [MyST](https://mystmd.org/) e [Marp](https://marp.app/) também podem transformá-lo em site, documento ou apresentação.
+
+Os comandos e requisitos de cada rota estão em [Markdown e renderização](docs/markdown-rendering.md). Use [Pandoc](https://pandoc.org/) quando precisar converter Markdown para outro formato.
 
 ## Dados protegidos
 
@@ -74,7 +86,7 @@ Mantenha no repositório apenas dados, código, documentação e resultados apro
 
 ## Para aprofundar
 
-- [Começando um projeto](docs/quickstart.md): primeiro ciclo de trabalho.
+- [Experimente este repositório](docs/quickstart.md): clone, execução e primeira saída renderizada.
 - [Git: o mínimo para começar](docs/git-basics.md): histórico de versões sem transformar o arquivo em `final3`.
 - [Markdown e renderização](docs/markdown-rendering.md): site, documento e slides.
 - [Referências e caminhos de estudo](docs/references.md): fontes e materiais de aprofundamento.

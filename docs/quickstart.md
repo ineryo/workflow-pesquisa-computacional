@@ -1,70 +1,73 @@
-# Começando um projeto
+# Experimente este repositório
 
-Use este guia quando estiver iniciando uma pesquisa computacional e quiser montar um primeiro ciclo de trabalho.
+Este guia executa o exemplo que já vem no repositório. Para aplicar as ideias na sua própria pesquisa, adapte a estrutura e as práticas ao seu contexto; você não precisa usar este repositório inteiro como base.
 
-## 1. Crie uma estrutura mínima
+## O que você precisa
 
-```text
-meu-projeto/
-├── README.md
-├── data/
-├── src/
-├── results/
-└── docs/
-```
-
-- `data/`: entradas que podem ficar no repositório.
-- `src/`: scripts, modelos ou arquivos do simulador.
-- `results/`: tabelas e figuras produzidas pela análise.
-- `docs/`: relatório, notas e apresentação.
-- `README.md`: o que o projeto investiga, como executar a análise e onde estão os resultados.
-
-Adapte os nomes se o seu domínio pedir outra organização. O importante é conseguir localizar entradas, método, resultados e comunicação.
-
-## 2. Faça o primeiro ciclo
-
-1. Coloque um conjunto pequeno de dados ou uma entrada sintética em `data/`.
-2. Escreva ou adapte o código em `src/`.
-3. Execute a análise e salve as tabelas e figuras em `results/`.
-4. Use os arquivos de `results/` no relatório ou apresentação em `docs/`.
-5. Atualize o `README.md` com o comando principal.
-
-Evite copiar uma tabela para o relatório e depois manter duas versões. Se o código gera a tabela, salve-a em `results/` e use esse arquivo no documento.
-
-## 3. Registre o histórico
-
-Use Git desde o começo. Você não precisa aprender tudo agora; comece por:
+Confira as ferramentas disponíveis:
 
 ```bash
-git status
-git diff
-git add <arquivo>
-git commit -m "descreva brevemente a mudança"
-git log
+git --version
+python --version
+node --version
+npm --version
 ```
 
-Veja [Git: o mínimo para começar](git-basics.md).
+O mini-projeto usa apenas a biblioteca padrão do Python, portanto não precisa de `requirements.txt` nem de ambiente virtual. Node.js e npm são usados para executar MyST e Marp com `npx`, sem instalação global dessas ferramentas.
 
-## 4. Escreva enquanto trabalha
+## 1. Clone o repositório
 
-Registre decisões, hipóteses, comandos importantes e resultados próximos do trabalho. Um arquivo `.md` em `docs/` já resolve muito. Quando precisar entregar um relatório ou uma apresentação, veja [Markdown e renderização](markdown-rendering.md).
+```bash
+git clone https://github.com/ineryo/workflow-pesquisa-computacional.git
+cd workflow-pesquisa-computacional
+```
 
-## 5. Separe dados protegidos
+## 2. Execute o mini-projeto
 
-Dados restritos podem ficar fora do projeto:
+```bash
+cd examples/mini-project
+python src/analyze.py
+```
+
+O script lê `data/sample.csv` e produz:
 
 ```text
-workspace/
-├── meu-projeto/
-└── dados-protegidos/
+results/tables/summary.csv
+results/tables/summary.md
+results/figures/comparison.svg
 ```
 
-O código recebe o caminho autorizado durante a execução. Exemplos, testes e documentação podem usar dados públicos ou sintéticos. Resultados derivados também podem estar sujeitos às restrições da fonte.
+## 3. Leia o relatório em Markdown
 
-## Quando surgir um problema maior
+Abra `docs/report.md` no editor, no GitHub ou em qualquer visualizador de Markdown. O relatório usa a tabela e a figura que o script acabou de gerar.
 
-- Se você não souber mais a ordem de execução dos scripts, conheça Make ou Snakemake.
-- Se os dados ficarem grandes demais para o fluxo normal de Git, conheça DVC, Git LFS ou soluções institucionais.
-- Se precisar de um paper computacional totalmente reconstruível, conheça showyourwork!.
+## 4. Veja o site local
 
-Os links e um pouco de contexto ficam em [ferramentas e caminhos para explorar](extras/tooling-landscape.md).
+Volte para a raiz do repositório e inicie o site:
+
+```bash
+cd ../..
+npx --yes mystmd@latest start
+```
+
+O MyST mostra um endereço local no terminal. Deixe esse comando em execução e abra o endereço no navegador. Para encerrar o servidor, pressione `Ctrl+C`.
+
+## 5. Gere um primeiro documento
+
+Para gerar uma cópia DOCX do relatório:
+
+```bash
+npx --yes mystmd@latest build examples/mini-project/docs/report.md --docx --strict
+```
+
+O arquivo gerado fica em `exports/mini-project-report.docx`. A figura é SVG; se ImageMagick não estiver instalado, o MyST pode avisar que a conversão da imagem precisa ser conferida no documento final.
+
+## Opcional: experimente os slides
+
+O deck reutiliza a figura produzida pelo mini-projeto. Os comandos para gerar PDF ou PPTX, e os requisitos de navegador, estão em [Markdown e renderização](markdown-rendering.md).
+
+## Leve as ideias para sua pesquisa
+
+Quando quiser começar um projeto próprio, crie uma estrutura pequena com `data/`, `src/`, `results/`, `docs/` e um `README.md`. Adapte os nomes ao seu domínio, registre como executar a análise e mantenha resultados protegidos fora do repositório quando necessário.
+
+Veja [Git: o mínimo para começar](git-basics.md) e [ferramentas e caminhos para explorar](extras/tooling-landscape.md) quando aparecer uma necessidade concreta.
