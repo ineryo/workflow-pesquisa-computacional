@@ -1,8 +1,8 @@
 # Começando um projeto
 
-Esta página apresenta apenas o necessário para começar.
+Use este guia quando estiver iniciando uma pesquisa computacional e quiser montar um primeiro ciclo de trabalho.
 
-Uma estrutura inicial pode ser:
+## 1. Crie uma estrutura mínima
 
 ```text
 meu-projeto/
@@ -13,57 +13,45 @@ meu-projeto/
 └── docs/
 ```
 
-Ela não é uma taxonomia obrigatória. A ideia é apenas separar, de forma previsível:
+- `data/`: entradas que podem ficar no repositório.
+- `src/`: scripts, modelos ou arquivos do simulador.
+- `results/`: tabelas e figuras produzidas pela análise.
+- `docs/`: relatório, notas e apresentação.
+- `README.md`: o que o projeto investiga, como executar a análise e onde estão os resultados.
 
-- **entradas**;
-- **métodos/código**;
-- **resultados produzidos**;
-- **documentação e comunicação**.
+Adapte os nomes se o seu domínio pedir outra organização. O importante é conseguir localizar entradas, método, resultados e comunicação.
 
-Essa separação é compatível com a ideia de *research compendium* discutida pelo *Turing Way* e com recomendações de organização apresentadas por Wilson et al. (2017).
+## 2. Faça o primeiro ciclo
 
-## Um fluxo simples
+1. Coloque um conjunto pequeno de dados ou uma entrada sintética em `data/`.
+2. Escreva ou adapte o código em `src/`.
+3. Execute a análise e salve as tabelas e figuras em `results/`.
+4. Use os arquivos de `results/` no relatório ou apresentação em `docs/`.
+5. Atualize o `README.md` com o comando principal.
 
-```text
-data/
-  ↓
-src/
-  ↓
-results/
-  ↓
-docs/
+Evite copiar uma tabela para o relatório e depois manter duas versões. Se o código gera a tabela, salve-a em `results/` e use esse arquivo no documento.
+
+## 3. Registre o histórico
+
+Use Git desde o começo. Você não precisa aprender tudo agora; comece por:
+
+```bash
+git status
+git diff
+git add <arquivo>
+git commit -m "descreva brevemente a mudança"
+git log
 ```
 
-Se um script ou simulador produz uma tabela ou figura, prefira salvar esse resultado em `results/` e fazer o documento consumi-lo, em vez de manter cópias independentes espalhadas.
+Veja [Git: o mínimo para começar](git-basics.md).
 
-## README
+## 4. Escreva enquanto trabalha
 
-O `README.md` deve responder, pelo menos:
+Registre decisões, hipóteses, comandos importantes e resultados próximos do trabalho. Um arquivo `.md` em `docs/` já resolve muito. Quando precisar entregar um relatório ou uma apresentação, veja [Markdown e renderização](markdown-rendering.md).
 
-- o que é este projeto;
-- por onde começar;
-- como executar a análise principal;
-- onde estão os resultados.
+## 5. Separe dados protegidos
 
-Ele serve tanto para colaboradores quanto para você mesmo no futuro.
-
-## Git
-
-Use Git desde o começo para manter histórico de mudanças.
-
-O objetivo inicial não é dominar Git. É deixar de depender de nomes como:
-
-```text
-modelo_final.py
-modelo_final2.py
-modelo_final_corrigido.py
-```
-
-Veja [`git-basics.md`](git-basics.md).
-
-## Dados protegidos
-
-Dados restritos ou protegidos podem ficar fora do projeto:
+Dados restritos podem ficar fora do projeto:
 
 ```text
 workspace/
@@ -71,41 +59,12 @@ workspace/
 └── dados-protegidos/
 ```
 
-O código pode receber a localização dos dados durante a execução.
+O código recebe o caminho autorizado durante a execução. Exemplos, testes e documentação podem usar dados públicos ou sintéticos. Resultados derivados também podem estar sujeitos às restrições da fonte.
 
-O projeto pode usar dados públicos ou sintéticos em exemplos, documentação e testes.
+## Quando surgir um problema maior
 
-Dados derivados também podem continuar sujeitos às mesmas restrições da fonte original; isso deve ser avaliado no contexto do projeto.
+- Se você não souber mais a ordem de execução dos scripts, conheça Make ou Snakemake.
+- Se os dados ficarem grandes demais para o fluxo normal de Git, conheça DVC, Git LFS ou soluções institucionais.
+- Se precisar de um paper computacional totalmente reconstruível, conheça showyourwork!.
 
-## Resultados e figuras
-
-Quando possível:
-
-- gere resultados a partir do código;
-- mantenha a origem de uma figura reconhecível;
-- use formatos vetoriais para gráficos quando forem adequados;
-- use HTML quando a interatividade realmente agregar valor.
-
-Para aprofundar visualização científica, veja as referências em [`references.md`](references.md).
-
-## Quando complicar?
-
-Somente quando surgir uma necessidade concreta.
-
-Exemplos:
-
-```text
-“Não sei mais qual script executar primeiro.”
-→ procure Make ou Snakemake.
-
-“Meus dados são grandes demais para o fluxo normal de Git.”
-→ procure DVC, Git LFS ou soluções institucionais.
-
-“Quero um paper computacional totalmente reconstruível.”
-→ conheça showyourwork!.
-
-“Meu deck Marp vive ficando desatualizado.”
-→ conheça sincronização de artefatos e MAU.
-```
-
-Essas ferramentas existem. Você não precisa aprendê-las antes de precisar delas.
+Os links e um pouco de contexto ficam em [ferramentas e caminhos para explorar](extras/tooling-landscape.md).

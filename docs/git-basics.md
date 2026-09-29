@@ -1,8 +1,6 @@
 # Git: o mínimo para começar
 
-Git mantém o histórico de mudanças do projeto.
-
-Para um aluno começando, isso já resolve um problema importante: **a versão não precisa morar no nome do arquivo**.
+Git guarda o histórico de mudanças do projeto. Assim, a versão não precisa morar no nome do arquivo.
 
 Em vez de:
 
@@ -13,9 +11,9 @@ analise_final.py
 analise_final2.py
 ```
 
-um único `analise.py` pode evoluir ao longo do histórico.
+mantenha um único `analise.py` e registre as mudanças no histórico.
 
-## Comandos suficientes para o primeiro contato
+## Primeiro uso
 
 ```bash
 git status
@@ -25,36 +23,19 @@ git commit -m "descreva brevemente a mudança"
 git log
 ```
 
-Se o projeto usa um repositório remoto, também aparecerão:
+- `git status` mostra o que mudou.
+- `git diff` mostra as alterações antes do registro.
+- `git add` escolhe os arquivos que entram no próximo registro.
+- `git commit` salva um ponto do histórico com uma mensagem curta.
+- `git log` mostra os registros anteriores.
 
-```bash
-git pull
-git push
-```
+Se você usar um repositório remoto, também verá `git pull` e `git push`.
 
-Não é necessário dominar branches, rebases, hooks ou outros recursos avançados para começar a se beneficiar de controle de versão.
+## Registre marcos reais
 
-## Marcos importantes
+Uma pesquisa pode ter versões usadas em reunião, em um resumo submetido, em um artigo ou em uma defesa. Faça um commit quando uma mudança tiver um propósito claro. Você pode aprender a marcar versões formais quando precisar disso.
 
-Uma pesquisa raramente tem um único “final”. Há estados importantes:
+## Continue aprendendo
 
-- resultado apresentado em reunião;
-- resumo submetido;
-- artigo submetido;
-- versão usada em uma defesa.
-
-Git permite marcar estados relevantes do histórico. Esse recurso pode ser aprendido quando surgir a necessidade.
-
-## Aprenda pela referência certa
-
-Este projeto não pretende substituir bons cursos de Git.
-
-Recomendação principal:
-
-- **Software Carpentry — Version Control with Git**
-  https://swcarpentry.github.io/git-novice/
-
-Para entender por que versionamento importa especificamente em pesquisa:
-
-- **The Turing Way — Version Control**
-  https://book.the-turing-way.org/reproducible-research/vcs/
+- [Software Carpentry: Version Control with Git](https://swcarpentry.github.io/git-novice/) oferece um tutorial prático para pesquisadores.
+- [The Turing Way: Version Control](https://book.the-turing-way.org/reproducible-research/vcs/) explica por que o versionamento é útil em pesquisa.

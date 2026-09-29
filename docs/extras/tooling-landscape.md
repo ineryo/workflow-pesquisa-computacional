@@ -1,121 +1,49 @@
 # Ferramentas e caminhos para explorar
 
-Esta página não é um checklist de ferramentas a dominar.
+Esta página é opcional. Use-a quando um problema aparecer; você não precisa aprender estas ferramentas antes de começar.
 
-Ela existe para que, quando um problema aparecer, o aluno reconheça alguns nomes e saiba por onde começar a procurar.
+## Preciso gerar um artigo, relatório ou outro formato
 
-## Escrita e publicação
+- **MyST** trabalha com documentos científicos em Markdown, referências, equações e exports. Veja <https://mystmd.org/>.
+- **Quarto** é uma opção de publicação científica e técnica, especialmente em trabalhos que combinam execução e documento. Veja <https://quarto.org/>.
+- **Pandoc** converte documentos entre formatos. Veja <https://pandoc.org/>.
+- **Manubot** ajuda a manter manuscritos científicos colaborativos com Markdown, Git e automação. Veja <https://manubot.org/>.
 
-### MyST
+Comece com a ferramenta que já resolve o seu caso. Você não precisa adotar um sistema completo para escrever o primeiro relatório.
 
-Documentos científicos baseados em Markdown, referências cruzadas, equações e exportação para diferentes formatos.
+## Minha execução virou um pipeline difícil de repetir
 
-https://mystmd.org/
+- **Make** ajuda quando poucos comandos já têm dependências claras.
+- **Snakemake** organiza pipelines científicos mais extensos. Veja <https://snakemake.readthedocs.io/>.
+- **showyourwork!** é voltado a artigos computacionais que precisam reconstruir paper, scripts, figuras e dependências. Veja <https://show-your.work/>.
 
-### Quarto
+Olhe para essas opções quando a ordem dos scripts ou a repetição do pipeline começar a causar erros.
 
-Ecossistema amplo de publicação científica e técnica, especialmente útil em workflows que combinam execução computacional e documentos.
+## Meus dados ficaram grandes demais para o fluxo normal de Git
 
-https://quarto.org/
+- **DVC** oferece versionamento e pipelines voltados a dados e experimentos. Veja <https://dvc.org/>.
+- **Git LFS** e soluções institucionais também podem ser adequados, conforme o tamanho dos dados e as restrições de acesso.
 
-### Pandoc
+Dados protegidos exigem armazenamento autorizado, independentemente da ferramenta de versionamento escolhida.
 
-Conversor universal de documentos e base de muitos outros sistemas de publicação.
+## Quero explorar dados em notebook
 
-https://pandoc.org/
+- **Jupyter** é útil para exploração, estudo e prototipagem.
+- **Jupytext** representa notebooks também em formatos textuais, o que pode facilitar revisão e versionamento. Veja <https://jupytext.readthedocs.io/>.
 
-### Marp
+Use notebooks para explorar. Quando um resultado precisar ser reproduzido, deixe claro qual código e quais entradas o produzem.
 
-Apresentações baseadas em Markdown.
+## Quero figuras interativas ou visualização especializada
 
-https://marp.app/
+- **Matplotlib** é uma base consolidada para figuras científicas estáticas em Python. Veja <https://matplotlib.org/>.
+- **Plotly** permite gráficos interativos e exportação para HTML. Veja <https://plotly.com/python/>.
+- **Altair / Vega-Lite** oferece visualização declarativa. Veja <https://altair-viz.github.io/>.
+- **ParaView** e **PyVista** são opções para meshes, elementos finitos, CFD e visualização 3D. Veja <https://www.paraview.org/> e <https://pyvista.org/>.
 
-### Manubot
+Interatividade vale a pena quando ajuda a responder uma pergunta; uma figura estática costuma bastar para comunicar um resultado estável.
 
-Workflow colaborativo para manuscritos científicos com Markdown, Git e automação.
+## Meu relatório e meus slides vivem desatualizados
 
-https://manubot.org/
+Primeiro, mantenha tabelas e figuras como artefatos produzidos pelo código e reutilize-os nos documentos. Se isso não resolver um problema recorrente, conheça o Markdown Artifact Updater (MAU), uma ferramenta experimental para atualizar regiões explícitas de documentos Markdown ou Marp a partir de artefatos externos.
 
-## Automação e reprodutibilidade
-
-### Make
-
-Útil quando um conjunto pequeno de comandos já possui dependências claras.
-
-### Snakemake
-
-Workflow engine para pipelines científicos mais complexos.
-
-https://snakemake.readthedocs.io/
-
-### showyourwork!
-
-Workflow para artigos científicos computacionais reproduzíveis, integrando paper, scripts, figuras e dependências.
-
-https://show-your.work/
-
-### DVC
-
-Versionamento e pipelines voltados a dados e experimentos.
-
-https://dvc.org/
-
-## Notebooks
-
-### Jupyter
-
-Excelente para exploração, estudo e prototipagem.
-
-### Jupytext
-
-Permite representar notebooks também em formatos textuais, o que pode ajudar em versionamento e revisão.
-
-https://jupytext.readthedocs.io/
-
-## Visualização
-
-### Matplotlib
-
-Base consolidada para figuras científicas estáticas em Python.
-
-https://matplotlib.org/
-
-### Plotly
-
-Visualização interativa e exportação para HTML, além de imagens estáticas.
-
-https://plotly.com/python/
-
-### Altair / Vega-Lite
-
-Abordagem declarativa para visualização.
-
-https://altair-viz.github.io/
-
-### ParaView e PyVista
-
-Opções relevantes para meshes, elementos finitos, CFD e visualização 3D científica.
-
-## Sincronização de artefatos
-
-### Markdown Artifact Updater (MAU)
-
-Ferramenta experimental para atualizar regiões explícitas de documentos Markdown/Marp a partir de código e artefatos externos.
-
-Pode ser útil quando decks ou documentos ficam repetidamente desatualizados em relação aos resultados.
-
-Não faz parte do núcleo deste projeto. O desenvolvimento adicional deve ser justificado por casos reais não atendidos satisfatoriamente por ferramentas existentes.
-
-## Como escolher
-
-Evite escolher ferramentas por popularidade ou completude.
-
-Uma heurística melhor é:
-
-```text
-problema percebido
-      ↓
-solução mais simples suficiente
-      ↓
-ferramenta adicional somente se necessário
-```
+O MAU não é necessário no começo. Avalie-o apenas quando uma necessidade real não for atendida por uma solução simples.

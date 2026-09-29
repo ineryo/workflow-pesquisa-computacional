@@ -1,63 +1,53 @@
-# Referências e trabalhos relacionados
+# Referências e caminhos de estudo
 
-Este projeto é uma curadoria e uma implementação de referência. As ideias centrais não são apresentadas como invenções próprias.
+Use esta página como mapa de aprofundamento. Você não precisa ler tudo antes de começar.
 
-## Referências centrais
+## Organização e reprodutibilidade
 
-### Good enough practices in scientific computing
+### Good Enough Practices in Scientific Computing
 
-Wilson et al. (2017) discutem práticas de organização, dados, software, colaboração e escrita para pesquisadores que dependem de computação sem necessariamente terem formação formal em desenvolvimento.
+Wilson et al. (2017) reúne práticas de organização, dados, software, colaboração e escrita para pesquisadores que usam computação. É uma boa referência geral quando você quiser entender de onde vêm muitas recomendações deste repositório.
 
-https://doi.org/10.1371/journal.pcbi.1005510
+<https://doi.org/10.1371/journal.pcbi.1005510>
 
-É a principal referência geral deste projeto.
+### The Turing Way
 
-### The Turing Way — Research Compendia
+O *Turing Way* apresenta caminhos para pesquisa reprodutível e descreve *research compendia*, que organizam dados, métodos, textos e outputs de uma pesquisa.
 
-O *Turing Way* descreve *research compendia* como coleções organizadas dos componentes digitais de uma pesquisa e destaca a separação entre dados, métodos e outputs.
-
-https://book.the-turing-way.org/reproducible-research/compendia/
-
-### Software Carpentry — Version Control with Git
-
-Tutorial prático e progressivo de Git para pesquisadores.
-
-https://swcarpentry.github.io/git-novice/
-
-### Ten Simple Rules for Better Figures
-
-Rougier, Droettboom e Bourne apresentam princípios concisos para melhorar figuras científicas.
-
-https://doi.org/10.1371/journal.pcbi.1003833
-
-## Prior art em português
-
-### Kit de sobrevivência digital para cientistas — CompGeoLab/IAG-USP
-
-Minicurso brasileiro voltado a cientistas que trabalham com dados, cobrindo Bash, Git/GitHub, Make, LaTeX e ciência aberta.
-
-https://github.com/compgeolab/kit
-
-É um antecedente particularmente próximo da motivação deste projeto.
-
-A diferença de escopo é importante: o Kit é um curso de ferramentas e práticas; este repositório busca ser um **starter/reference project pequeno**, utilizável antes mesmo de o aluno dominar todo esse ecossistema.
+<https://book.the-turing-way.org/reproducible-research/compendia/>
 
 ### Rede Brasileira de Reprodutibilidade
 
-Iniciativa multidisciplinar voltada à promoção de práticas de pesquisa transparentes e reprodutíveis no Brasil.
+A rede reúne materiais e iniciativas sobre práticas de pesquisa transparentes e reprodutíveis no Brasil.
 
-https://www.reprodutibilidade.org/
+<https://www.reprodutibilidade.org/>
 
-## Ferramentas de publicação
+## Git e trabalho computacional
 
-- MyST: https://mystmd.org/
-- Marp: https://marp.app/
-- Pandoc: https://pandoc.org/
+### Software Carpentry: Version Control with Git
 
-## Mais leituras
+Tutorial prático de Git voltado a pesquisadores. Use-o quando os comandos básicos deste repositório deixarem de ser suficientes.
 
-Ferramentas e alternativas adicionais aparecem em:
+<https://swcarpentry.github.io/git-novice/>
 
-[`extras/tooling-landscape.md`](extras/tooling-landscape.md)
+### Kit de sobrevivência digital para cientistas
 
-A lista é deliberadamente opcional: conhecer a existência de uma ferramenta pode ser suficiente até que um problema real torne seu estudo necessário.
+Material do CompGeoLab/IAG-USP sobre Bash, Git/GitHub, Make, LaTeX e ciência aberta. É uma boa continuação quando você quiser aprender ferramentas de trabalho científico com mais profundidade.
+
+<https://github.com/compgeolab/kit>
+
+## Figuras e comunicação
+
+### Ten Simple Rules for Better Figures
+
+Rougier, Droettboom e Bourne apresentam princípios práticos para melhorar figuras científicas. Consulte quando estiver preparando gráficos para relatório, artigo ou apresentação.
+
+<https://doi.org/10.1371/journal.pcbi.1003833>
+
+## Ferramentas citadas neste repositório
+
+- [MyST](https://mystmd.org/) para documentos científicos em Markdown.
+- [Marp](https://marp.app/) para apresentações em Markdown.
+- [Pandoc](https://pandoc.org/) para conversão entre formatos.
+
+Outras opções aparecem em [ferramentas e caminhos para explorar](extras/tooling-landscape.md), organizadas pelo problema que ajudam a resolver.

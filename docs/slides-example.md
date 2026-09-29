@@ -4,45 +4,40 @@ theme: research
 paginate: true
 ---
 
-# Workflow de Pesquisa Computacional
+# Comparação analítica e numérica
 
-Um exemplo de apresentação que continua sendo um arquivo Markdown `.md`.
+Exemplo sintético de uma apresentação científica em Markdown.
 
 ---
 
-## Ideia central
+## Pergunta
+
+Quanto a solução numérica difere da solução analítica para os dados de exemplo?
+
+---
+
+## Dados e análise
 
 ```text
-dados
+data/sample.csv
   ↓
-código / modelo / simulador
+src/analyze.py
   ↓
-resultados
-  ↓
-comunicação
+results/
 ```
 
----
-
-## O objetivo não é ensinar DevOps
-
-Queremos antecipar poucas práticas úteis:
-
-- organização previsível;
-- histórico com Git;
-- resultados rastreáveis;
-- Markdown como fonte;
-- ferramentas avançadas só quando necessárias.
+O script lê os pares de valores, calcula o RMSE e salva uma tabela e uma figura.
 
 ---
 
-## O workflow deve ser “boring”
+## Resultado
 
-Quanto menos energia for gasta tentando descobrir:
+![Comparação entre as soluções](../examples/mini-project/results/figures/comparison.svg)
 
-- qual arquivo é o final;
-- de onde veio uma figura;
-- qual script rodar;
-- qual versão foi apresentada;
+RMSE: **0.0209**
 
-mais energia sobra para a pergunta científica.
+---
+
+## Conclusão
+
+A solução numérica ficou próxima da solução analítica neste exemplo. A mesma figura também aparece no relatório em `examples/mini-project/docs/report.md`.
