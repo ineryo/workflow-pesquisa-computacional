@@ -102,7 +102,7 @@ O caminho principal é curto:
 
 ## Exemplo vivo
 
-[`examples/mini-project`](examples/mini-project/) demonstra uma pequena pesquisa sintética:
+[`examples/mini-project/README.md`](examples/mini-project/README.md) demonstra uma pequena pesquisa sintética:
 
 ```text
 data/sample.csv
@@ -120,26 +120,31 @@ O exemplo usa Python apenas por conveniência. O protocolo não é Python-first:
 
 ## Renderização
 
-Com MyST instalado:
+Para construir o site local e reportar links quebrados:
 
 ```bash
-myst start
+npx --yes mystmd@latest build --site --strict
 ```
 
-Para exportar um documento específico:
+Para exportar o documento do mini-projeto:
 
 ```bash
-myst build examples/mini-project/docs/report.md --pdf
+npx --yes mystmd@latest build examples/mini-project/docs/report.md --pdf --docx --strict
 ```
+
+A exportação PDF requer uma instalação local de LaTeX ou Typst. A exportação DOCX não depende desse requisito.
 
 Slides podem continuar como Markdown comum com frontmatter Marp:
 
 ```bash
-npx @marp-team/marp-cli@latest \
-  --theme-set styles/marp \
-  docs/slides-example.md \
-  --pdf
+npx --yes @marp-team/marp-cli@latest \
+  --theme-set styles/marp/research.css \
+  --pdf \
+  --output exports/slides-example.pdf \
+  docs/slides-example.md
 ```
+
+A exportação PDF do Marp requer Chrome, Chromium, Edge ou Firefox disponível no sistema (ou indicado por `CHROME_PATH`).
 
 Pandoc permanece disponível quando um caso de interoperabilidade justificar:
 

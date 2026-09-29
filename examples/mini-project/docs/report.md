@@ -1,3 +1,14 @@
+---
+title: Comparação entre uma solução analítica e uma solução numérica
+authors:
+  - name: Exemplo sintético
+exports:
+  - format: pdf
+    output: ../../../exports/mini-project-report.pdf
+  - format: docx
+    output: ../../../exports/mini-project-report.docx
+---
+
 # Comparação entre uma solução analítica e uma solução numérica
 
 Este documento é deliberadamente pequeno. Ele demonstra a separação entre:

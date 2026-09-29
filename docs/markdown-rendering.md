@@ -16,14 +16,16 @@ MyST é usado como backend recomendado para documentos científicos.
 Exemplo:
 
 ```bash
-myst build docs/report.md --pdf
+npx --yes mystmd@latest build examples/mini-project/docs/report.md --pdf
 ```
 
 ou:
 
 ```bash
-myst build docs/report.md --docx
+npx --yes mystmd@latest build examples/mini-project/docs/report.md --docx
 ```
+
+O mini-projeto declara esses exports no frontmatter do próprio relatório. PDF requer uma instalação local de LaTeX ou Typst; DOCX pode ser usado quando esse renderer ainda não estiver disponível.
 
 O projeto não é “um projeto MyST”. MyST é um renderer recomendado.
 
@@ -35,7 +37,16 @@ https://mystmd.org/
 
 ## Marp para apresentações
 
-Marp permite que uma apresentação continue sendo um `.md`.
+Marp permite que uma apresentação continue sendo um `.md`. Para exportar o exemplo deste repositório:
+
+```bash
+npx --yes @marp-team/marp-cli@latest \
+  --theme-set styles/marp/research.css \
+  --pdf --output exports/slides-example.pdf \
+  docs/slides-example.md
+```
+
+A exportação PDF requer Chrome, Chromium, Edge ou Firefox disponível no sistema (ou indicado por `CHROME_PATH`).
 
 Um arquivo simples:
 

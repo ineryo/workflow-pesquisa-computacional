@@ -23,14 +23,6 @@ project:
     - title: Decisões
       children:
         - file: docs/decisions/ADR-0001-markdown-first-research-workflow.md
-  exports:
-    - format: pdf
-      article: docs/quickstart.md
-      output: exports/quickstart.pdf
-    - format: docx
-      article: docs/quickstart.md
-      output: exports/quickstart.docx
-
 site:
   template: book-theme
   title: Workflow científico computacional leve

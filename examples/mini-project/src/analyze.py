@@ -23,6 +23,8 @@ def load_rows():
 
 
 def rmse(rows):
+    if not rows:
+        raise ValueError("É necessária ao menos uma linha para calcular o RMSE.")
     return math.sqrt(
         sum((r["numerical"] - r["analytical"]) ** 2 for r in rows) / len(rows)
     )
@@ -33,7 +35,7 @@ def write_summary(rows):
     value = rmse(rows)
 
     with (TABLES / "summary.csv").open("w", newline="", encoding="utf-8") as f:
-        writer = csv.writer(f)
+        writer = csv.writer(f, lineterminator="\n")
         writer.writerow(["metric", "value"])
         writer.writerow(["RMSE", f"{value:.4f}"])
 
