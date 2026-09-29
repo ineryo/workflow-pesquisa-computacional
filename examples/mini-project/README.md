@@ -24,12 +24,23 @@ docs/report.md e ../../docs/slides-example.md
 
 ## Execute
 
-Na pasta deste mini-projeto:
+Este exemplo requer Python 3.11 ou superior. Na pasta deste mini-projeto, crie e ative um ambiente virtual antes de instalar a dependência.
+
+No Windows com PowerShell:
+
+```powershell
+py -m venv .venv
+.venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
+python src/analyze.py
+```
+
+No Linux ou macOS:
 
 ```bash
 python3 -m venv .venv
-. .venv/bin/activate
-python -m pip install --requirement requirements.txt
+source .venv/bin/activate
+python -m pip install -r requirements.txt
 python src/analyze.py
 ```
 

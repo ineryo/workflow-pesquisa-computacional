@@ -4,7 +4,7 @@ Este guia executa o exemplo que já vem no repositório. Para aplicar as ideias 
 
 ## O que você precisa
 
-Para executar o mini-projeto, use Git para clonar o repositório e Python 3 para executar a análise. Para renderizar site, documento ou slides, você também precisará de Node.js com npm. Confira se essas ferramentas estão disponíveis:
+Para executar o mini-projeto, use Git e Python 3.11 ou superior. Para renderizar site, documento ou slides, use Node.js 18 ou superior com npm.
 
 ```bash
 git --version
@@ -22,13 +22,25 @@ cd workflow-pesquisa-computacional
 
 ## 2. Execute o mini-projeto
 
-Na pasta do mini-projeto, crie um ambiente virtual, instale a dependência e execute a análise:
+Na pasta do mini-projeto, crie um ambiente virtual, instale a dependência e execute a análise.
+
+No Windows com PowerShell:
+
+```powershell
+cd examples/mini-project
+py -m venv .venv
+.venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
+python src/analyze.py
+```
+
+No Linux ou macOS:
 
 ```bash
 cd examples/mini-project
 python3 -m venv .venv
-. .venv/bin/activate
-python -m pip install --requirement requirements.txt
+source .venv/bin/activate
+python -m pip install -r requirements.txt
 python src/analyze.py
 ```
 
@@ -42,7 +54,7 @@ results/figures/comparison.png
 
 ## 3. Leia o relatório em Markdown
 
-Abra `docs/report.md` no editor, no GitHub ou em qualquer visualizador de Markdown. O relatório usa a tabela e a figura que o script acabou de gerar.
+Abra `docs/report.md` para ver o documento-fonte. A figura usa Markdown comum; a tabela é incluída a partir do arquivo gerado quando o documento é processado pelo MyST.
 
 ## 4. Veja o site local
 

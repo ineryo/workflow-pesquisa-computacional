@@ -48,9 +48,7 @@ No arquivo, Markdown continua sendo apenas texto simples e legível:
 
 ## Hipótese
 
-Esperamos que o erro permaneça abaixo de 5% para α = 0,05.
-
-Os resultados são salvos em `summary.csv`.
+Considere um nível de significância α = 0,05 e represente o desvio-padrão por σ.
 
 > A comparação deve ser feita com a solução analítica de referência.
 
@@ -62,9 +60,9 @@ $$
 RMSE = \sqrt{\frac{1}{n}\sum_{i=1}^{n}(y_i-\hat{y}_i)^2}
 $$
 
-O valor obtido foi **2,1%**, com desvio-padrão σ = 0,3%.
+O resultado calculado é **salvo** em `summary.csv`.
 
-![Comparação das soluções](results/figures/comparison.png)
+![Comparação das soluções](examples/mini-project/results/figures/comparison.png)
 ```
 
 Ao renderizar, uma versão equivalente vira uma apresentação formatada:
@@ -73,9 +71,7 @@ Ao renderizar, uma versão equivalente vira uma apresentação formatada:
 
 #### Hipótese
 
-Esperamos que o erro permaneça abaixo de 5% para α = 0,05.
-
-Os resultados são salvos em `summary.csv`.
+Considere um nível de significância α = 0,05 e represente o desvio-padrão por σ.
 
 > A comparação deve ser feita com a solução analítica de referência.
 
@@ -87,7 +83,7 @@ $$
 RMSE = \sqrt{\frac{1}{n}\sum_{i=1}^{n}(y_i-\hat{y}_i)^2}
 $$
 
-O valor obtido foi **2,1%**, com desvio-padrão σ = 0,3%.
+O resultado calculado é **salvo** em `summary.csv`.
 
 ![Comparação das soluções](examples/mini-project/results/figures/comparison.png)
 
