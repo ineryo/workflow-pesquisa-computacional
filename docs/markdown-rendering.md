@@ -1,5 +1,10 @@
 # Markdown e renderização
 
+```text
+report.md  ──MyST──→ site / DOCX / PDF
+slides.md  ──Marp──→ PDF / PPTX
+```
+
 Os documentos deste repositório são arquivos `.md`. Você pode lê-los e editá-los como texto; quando precisar compartilhar, pode gerar site, documento ou slides.
 
 ## Como visualizar o site
