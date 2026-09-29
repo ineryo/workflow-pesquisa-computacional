@@ -3,7 +3,7 @@
 - **Status:** Aceito para a arquitetura inicial
 - **Data:** 2026-09-28
 - **Escopo:** estrutura do projeto de referência e princípios de onboarding
-- **Nome do projeto:** em aberto
+- **Nome do projeto:** Workflow de Pesquisa Computacional
 
 ## Contexto
 

@@ -1,22 +1,39 @@
-# Workflow científico computacional leve
+# Workflow de Pesquisa Computacional
 
-> **Nome do projeto: ainda em aberto.**
->
-> “A boring research workflow is a good research workflow” é uma possível chamada editorial para uma futura postagem no Medium, não o nome definido deste repositório.
+Uma introdução leve a conceitos e práticas básicas de pesquisa computacional, pensada para alunos de iniciação científica e para apoiar projetos científicos mais organizados e eficientes.
 
-Este repositório é uma **implementação de referência** para começar projetos de pesquisa computacional de forma simples, legível e rastreável.
+Este repositório é uma implementação de referência: mostra um caminho pequeno para separar dados, código, resultados e documentação, sem exigir uma formação prévia em desenvolvimento de software.
 
-Ele foi pensado especialmente para alunos e pesquisadores de engenharia e outras ciências que usam programação como **meio para investigar um problema científico**, e não necessariamente como área principal de formação.
+> “A boring research workflow is a good research workflow” é uma possível chamada editorial para uma futura postagem no Medium. Não é o nome nem a identidade principal do projeto.
+
+## Comece pelo exemplo
+
+O [`mini-projeto`](examples/mini-project/README.md) já está completo e executável. Ele mostra o percurso que este repositório recomenda:
+
+```text
+data pública/sintética
+      ↓
+código, modelo ou simulador
+      ↓
+resultados persistidos
+      ↓
+Markdown
+      ↓
+documento ou apresentação
+```
+
+Depois, siga o caminho curto:
+
+1. leia [`docs/quickstart.md`](docs/quickstart.md);
+2. execute o mini-projeto;
+3. use [`docs/git-basics.md`](docs/git-basics.md) se Git ainda for novo;
+4. consulte os extras somente quando surgir uma necessidade concreta.
 
 ## Por que isto existe
 
-Muitas práticas elementares de desenvolvimento acabam sendo tratadas como conhecimento implícito em ambientes de inovação tecnológica. Para quem está entrando em iniciação científica, isso pode significar descobrir tarde demais conceitos simples de versionamento, organização, documentação e rastreabilidade.
+Muitas práticas simples de desenvolvimento aparecem tarde para quem começa uma iniciação científica: versionamento, organização, documentação e rastreabilidade. O custo costuma surgir meses depois, em scripts duplicados, arquivos chamados `final`, `final2` e `final_agora`, figuras sem origem clara e projetos difíceis de retomar.
 
-O custo aparece meses ou anos depois: scripts duplicados, arquivos chamados `final`, `final2` e `final_agora`, figuras cuja origem já não é clara e projetos antigos que nem o próprio autor consegue reconstruir com confiança.
-
-A motivação deste projeto é simples: **este é o tipo de ponto de partida que gostaríamos de ter recebido no início da pesquisa computacional**.
-
-A literatura já discute amplamente práticas de pesquisa computacional reprodutível. Este projeto não tenta reinventá-las. Ele seleciona um conjunto pequeno e aplicável desde cedo, apoiando-se em referências como:
+Este projeto reúne um conjunto pequeno de práticas já discutidas na literatura e em iniciativas de ensino. Não pretende reinventá-las. As referências incluem:
 
 - Wilson et al. (2017), *Good enough practices in scientific computing*;
 - *The Turing Way*, especialmente a ideia de *research compendium*;
@@ -92,13 +109,6 @@ Essas ferramentas **não definem a identidade do projeto**. O contrato principal
 └── examples/
     └── mini-project/
 ```
-
-O caminho principal é curto:
-
-1. leia este `README`;
-2. veja [`docs/quickstart.md`](docs/quickstart.md);
-3. use [`docs/git-basics.md`](docs/git-basics.md) apenas se Git ainda for novo;
-4. consulte os extras somente quando surgir necessidade.
 
 ## Exemplo vivo
 
@@ -185,10 +195,6 @@ A regra é deliberadamente simples:
 
 > **Uma recomendação deve resolver um problema provável antes de introduzir um novo conceito.**
 
-## Status
+## Decisão arquitetural
 
-A arquitetura inicial está registrada em:
-
-[`docs/decisions/ADR-0001-markdown-first-research-workflow.md`](docs/decisions/ADR-0001-markdown-first-research-workflow.md)
-
-O nome definitivo do projeto e targets institucionais específicos permanecem em aberto.
+A decisão Markdown-first, os limites do escopo e as alternativas consideradas estão registrados em [`docs/decisions/ADR-0001-markdown-first-research-workflow.md`](docs/decisions/ADR-0001-markdown-first-research-workflow.md).

@@ -1,8 +1,8 @@
 version: 1
 
 project:
-  title: Workflow científico computacional leve
-  description: Implementação de referência Markdown-first para pesquisa computacional.
+  title: Workflow de Pesquisa Computacional
+  description: Introdução leve e Markdown-first para pesquisa computacional.
   keywords:
     - pesquisa computacional
     - reprodutibilidade
@@ -25,4 +25,4 @@ project:
         - file: docs/decisions/ADR-0001-markdown-first-research-workflow.md
 site:
   template: book-theme
-  title: Workflow científico computacional leve
+  title: Workflow de Pesquisa Computacional
