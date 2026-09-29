@@ -292,24 +292,9 @@ A implementação inicial será considerada bem-sucedida se um aluno conseguir, 
 6. reconhecer como dados protegidos podem permanecer fora do projeto;
 7. encontrar caminhos de aprofundamento sem que eles pareçam pré-requisitos.
 
-## Estado de implementação
-
-A implementação inicial foi validada com:
-
-- execução do mini-projeto e geração de tabela e figura persistidas;
-- build estrito do site MyST;
-- exportação do relatório em DOCX;
-- exportação do deck Marp em PDF e PPTX.
-
-A rota de PDF do MyST continua dependente de um renderer local, como LaTeX ou Typst. A conversão de SVG para alguns destinos também pode exigir ImageMagick. Esses requisitos aparecem na documentação de uso para que a ausência deles não bloqueie o primeiro caminho de sucesso.
-
 ## Decisões ainda abertas
 
 - forma de distribuição: template, starter repository ou pacote complementar;
 - identidade visual padrão;
 - primeiro target institucional a ser implementado;
 - necessidade real de qualquer camada adicional de sincronização de artefatos.
-
-## Próximos passos
-
-Manter o exemplo executável e revisar apenas mudanças que preservem a baixa barreira de entrada. Antes de adicionar ferramentas ou automação, validar que há um problema recorrente que não é resolvido adequadamente por práticas e ferramentas existentes.

@@ -13,7 +13,7 @@ results/tables/summary.csv
 results/tables/summary.md
 results/figures/comparison.svg
   ↓
-docs/report.md e docs/slides-example.md
+docs/report.md e ../../docs/slides-example.md
 ```
 
 - `data/sample.csv` contém os dados sintéticos.

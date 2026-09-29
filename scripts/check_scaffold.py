@@ -5,6 +5,8 @@ ROOT = Path(__file__).resolve().parents[1]
 
 required = [
     "README.md",
+    "CONTRIBUTING.md",
+    "LICENSE",
     "myst.yml",
     "docs/quickstart.md",
     "docs/git-basics.md",

@@ -4,16 +4,21 @@ Este guia executa o exemplo que já vem no repositório. Para aplicar as ideias 
 
 ## O que você precisa
 
-Você usa Git para clonar e registrar versões, Python para executar o mini-projeto e Node.js com npm para chamar MyST e Marp por `npx`. Confira se essas ferramentas estão disponíveis:
+Para executar o mini-projeto, use Git para clonar o repositório e Python para executar a análise:
 
 ```bash
 git --version
 python --version
+```
+
+O mini-projeto usa apenas a biblioteca padrão do Python, portanto não precisa de `requirements.txt` nem de ambiente virtual.
+
+Para renderizar site, documento ou slides, você também precisará de Node.js com npm. Eles são chamados por `npx`, sem instalação global:
+
+```bash
 node --version
 npm --version
 ```
-
-O mini-projeto usa apenas a biblioteca padrão do Python, portanto não precisa de `requirements.txt` nem de ambiente virtual. MyST e Marp também não precisam de instalação global.
 
 ## 1. Clone o repositório
 

@@ -65,7 +65,7 @@ O valor obtido foi **2,1%**, com desvio-padrão σ = 0,3%.
 ![Comparação das soluções](results/figures/comparison.svg)
 ```
 
-Ao renderizar, o mesmo conteúdo vira uma apresentação formatada:
+Ao renderizar, uma versão equivalente vira uma apresentação formatada:
 
 ### Resultado do experimento
 
@@ -108,6 +108,8 @@ Mantenha no repositório apenas dados, código, documentação e resultados apro
 - [Markdown e renderização](docs/markdown-rendering.md): site, documento e slides.
 - [Referências e caminhos de estudo](docs/references.md): fontes e materiais de aprofundamento.
 - [Ferramentas e caminhos para explorar](docs/extras/tooling-landscape.md): opções para problemas que apareçam mais tarde.
+
+Quer contribuir com um exemplo ou estilo que você realmente usa? Veja [CONTRIBUTING.md](CONTRIBUTING.md).
 
 As práticas deste repositório se apoiam em trabalhos como *Good Enough Practices in Scientific Computing*, *The Turing Way*, Software Carpentry e o [Kit de sobrevivência digital para cientistas](https://github.com/compgeolab/kit), do CompGeoLab/IAG-USP. Veja as referências completas em [docs/references.md](docs/references.md).
 

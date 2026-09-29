@@ -2,7 +2,7 @@ version: 1
 
 project:
   title: Workflow de Pesquisa Computacional
-  description: Introdução leve e Markdown-first para pesquisa computacional.
+  description: Introdução leve à organização de projetos de pesquisa computacional.
   keywords:
     - pesquisa computacional
     - reprodutibilidade

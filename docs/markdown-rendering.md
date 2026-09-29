@@ -7,15 +7,23 @@ slides.md  ──Marp──→ PDF / PPTX
 
 Os documentos deste repositório são arquivos `.md`. Você pode lê-los e editá-los como texto; quando precisar compartilhar, pode gerar site, documento ou slides.
 
-## Como visualizar o site
+## Como ler ou gerar o site
 
-Na raiz do repositório, execute:
+Para navegar localmente pelo site, na raiz do repositório execute:
+
+```bash
+npx --yes mystmd@latest start
+```
+
+O MyST mostra um endereço local no terminal. Deixe esse comando em execução e abra o endereço no navegador. Para encerrar o servidor, pressione `Ctrl+C`.
+
+Para gerar e validar o site, execute:
 
 ```bash
 npx --yes mystmd@latest build --site --strict
 ```
 
-O comando constrói o site e interrompe o build se encontrar referências internas inválidas. Abra os arquivos gerados em `_build/site/` conforme a saída do MyST.
+Esse comando constrói o site e interrompe o build se encontrar referências internas inválidas. Os arquivos gerados ficam em `_build/site/`.
 
 ## Como gerar um documento
 
@@ -35,7 +43,7 @@ Para gerar PDF:
 npx --yes mystmd@latest build examples/mini-project/docs/report.md --pdf --strict
 ```
 
-A rota de PDF exige LaTeX ou Typst instalado localmente. Se ainda não tiver um desses renderizadores, use o DOCX ou o site para começar.
+PDF requer tooling adicional, como LaTeX ou Typst instalado localmente. Se ainda não tiver um desses renderizadores, use o DOCX ou o site para começar.
 
 [MyST](https://mystmd.org/) permite trabalhar com documentos científicos em Markdown, incluindo referências, equações, links e inclusão de resultados produzidos pela análise.
 
@@ -46,23 +54,13 @@ O exemplo de apresentação está em `docs/slides-example.md`.
 PDF:
 
 ```bash
-npx --yes @marp-team/marp-cli@latest \
-  --theme-set styles/marp/research.css \
-  --allow-local-files \
-  --pdf \
-  --output exports/slides-example.pdf \
-  docs/slides-example.md
+npx --yes @marp-team/marp-cli@latest --theme-set styles/marp/research.css --allow-local-files --pdf --output exports/slides-example.pdf docs/slides-example.md
 ```
 
 PPTX:
 
 ```bash
-npx --yes @marp-team/marp-cli@latest \
-  --theme-set styles/marp/research.css \
-  --allow-local-files \
-  --pptx \
-  --output exports/slides-example.pptx \
-  docs/slides-example.md
+npx --yes @marp-team/marp-cli@latest --theme-set styles/marp/research.css --allow-local-files --pptx --output exports/slides-example.pptx docs/slides-example.md
 ```
 
 A exportação de PDF ou PPTX pelo Marp requer Chrome, Chromium, Edge ou Firefox. Se o navegador não estiver na localização usual, indique-o com `CHROME_PATH`.

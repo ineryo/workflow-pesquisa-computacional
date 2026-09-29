@@ -15,6 +15,14 @@ mantenha um único `analise.py` e registre as mudanças no histórico.
 
 ## Primeiro uso
 
+Se você está começando um projeto próprio, entre na pasta dele e crie o repositório uma vez:
+
+```bash
+git init
+```
+
+Depois, use:
+
 ```bash
 git status
 git diff
