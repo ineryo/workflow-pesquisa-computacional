@@ -32,7 +32,7 @@ O script lê os pares de valores, calcula o RMSE e salva uma tabela e uma figura
 
 ## Resultado
 
-![Comparação entre as soluções](../examples/mini-project/results/figures/comparison.svg)
+![Comparação entre as soluções](../examples/mini-project/results/figures/comparison.png)
 
 A tabela gerada pelo script apresenta o RMSE e pode acompanhar esta figura no relatório.
 

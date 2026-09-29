@@ -48,5 +48,11 @@ Prefira mudanças que resolvam um problema observado, preservem a baixa barreira
 1. Abra uma issue ou discussão apenas se a mudança for grande ou o escopo estiver incerto.
 2. Crie uma branch para a mudança.
 3. Mantenha o diff pequeno e direcionado.
-4. Execute os checks relevantes.
+4. Execute o check mínimo:
+
+   ```bash
+   python scripts/check_scaffold.py
+   ```
+
+   Se alterou um exemplo, execute também os testes e a geração desse exemplo. Se alterou documentação ou estilo, valide o output correspondente quando aplicável.
 5. Abra um pull request explicando o problema ou caso, a solução e como ela foi validada.

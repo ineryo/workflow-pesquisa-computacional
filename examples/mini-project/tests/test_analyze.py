@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import csv
+import math
 import sys
 import tempfile
 import unittest
@@ -12,23 +14,33 @@ import analyze  # noqa: E402
 
 
 class AnalyzeTests(unittest.TestCase):
-    def test_rmse_rejects_empty_rows(self) -> None:
-        with self.assertRaisesRegex(ValueError, "ao menos uma linha"):
-            analyze.rmse([])
+    def test_rmse_matches_known_value(self) -> None:
+        rows = [
+            {"analytical": 0.0, "numerical": 0.0},
+            {"analytical": 0.0, "numerical": 3.0},
+            {"analytical": 0.0, "numerical": 4.0},
+        ]
 
-    def test_write_summary_uses_lf_line_endings(self) -> None:
-        rows = [{"analytical": 0.0, "numerical": 0.02}]
-        original_tables = analyze.TABLES
-        try:
-            with tempfile.TemporaryDirectory() as temporary_directory:
-                analyze.TABLES = Path(temporary_directory)
-                analyze.write_summary(rows)
+        self.assertTrue(math.isclose(analyze.rmse(rows), 5 / math.sqrt(3)))
+
+    def test_run_analysis_writes_expected_results(self) -> None:
+        data = Path(__file__).resolve().parents[1] / "data" / "sample.csv"
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            results = Path(temporary_directory) / "results"
+            value = analyze.run_analysis(data, results)
+
+            self.assertTrue(math.isclose(value, 0.0209, abs_tol=0.0001))
+            self.assertTrue((results / "figures" / "comparison.png").is_file())
+            self.assertGreater((results / "figures" / "comparison.png").stat().st_size, 0)
+
+            with (results / "tables" / "summary.csv").open(encoding="utf-8") as f:
                 self.assertEqual(
-                    (analyze.TABLES / "summary.csv").read_bytes(),
-                    b"metric,value\nRMSE,0.0200\n",
+                    list(csv.DictReader(f)), [{"metric": "RMSE", "value": "0.0209"}]
                 )
-        finally:
-            analyze.TABLES = original_tables
+            self.assertIn(
+                "| RMSE | 0.0209 |",
+                (results / "tables" / "summary.md").read_text(encoding="utf-8"),
+            )
 
 
 if __name__ == "__main__":

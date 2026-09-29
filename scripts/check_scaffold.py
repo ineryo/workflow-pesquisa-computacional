@@ -12,12 +12,22 @@ required = [
     "docs/git-basics.md",
     "docs/markdown-rendering.md",
     "docs/decisions/ADR-0001-markdown-first-research-workflow.md",
+    "examples/mini-project/requirements.txt",
     "examples/mini-project/docs/report.md",
-    "examples/mini-project/results/figures/comparison.svg",
+    "examples/mini-project/results/figures/comparison.png",
 ]
 
 missing = [path for path in required if not (ROOT / path).exists()]
-qmd_files = list(ROOT.rglob("*.qmd"))
+markdown_files = [
+    path
+    for path in ROOT.rglob("*.md")
+    if "_build" not in path.parts and ".venv" not in path.parts
+]
+latest_references = [
+    path.relative_to(ROOT)
+    for path in markdown_files
+    if "@latest" in path.read_text(encoding="utf-8")
+]
 
 if missing:
     print("Arquivos obrigatórios ausentes:")
@@ -25,10 +35,10 @@ if missing:
         print(f"  - {path}")
     sys.exit(1)
 
-if qmd_files:
-    print("Foram encontrados arquivos .qmd, contrariando a decisão Markdown-first:")
-    for path in qmd_files:
-        print(f"  - {path.relative_to(ROOT)}")
+if latest_references:
+    print("Referências a @latest encontradas na documentação:")
+    for path in latest_references:
+        print(f"  - {path}")
     sys.exit(1)
 
 print("Scaffold básico válido.")

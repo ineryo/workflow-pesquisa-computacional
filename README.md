@@ -2,7 +2,7 @@
 
 Uma pesquisa computacional pode começar com um script pequeno e, alguns meses depois, ficar difícil de retomar: aparecem cópias do mesmo arquivo, nomes como `final`, `final2` e `final_agora`, figuras sem origem clara e dúvidas sobre qual resultado entrou no relatório.
 
-Este repositório mostra um caminho curto para evitar parte desse trabalho sem exigir formação prévia em desenvolvimento de software:
+Este repositório mostra um caminho curto para evitar parte desse trabalho sem exigir formação prévia em desenvolvimento de software. O projeto foi pensado principalmente para iniciação científica e pesquisa computacional, mas as mesmas práticas também são úteis em disciplinas e projetos técnicos nos quais código, modelos ou simulações produzem resultados que precisam ser organizados e comunicados:
 
 ```text
 dados → código, modelo ou simulador → resultados persistidos → comunicação
@@ -48,7 +48,9 @@ No arquivo, Markdown continua sendo apenas texto simples e legível:
 
 ## Hipótese
 
-Esperamos que o erro permaneça abaixo de `5%` para α = 0,05.
+Esperamos que o erro permaneça abaixo de 5% para α = 0,05.
+
+Os resultados são salvos em `summary.csv`.
 
 > A comparação deve ser feita com a solução analítica de referência.
 
@@ -62,7 +64,7 @@ $$
 
 O valor obtido foi **2,1%**, com desvio-padrão σ = 0,3%.
 
-![Comparação das soluções](results/figures/comparison.svg)
+![Comparação das soluções](results/figures/comparison.png)
 ```
 
 Ao renderizar, uma versão equivalente vira uma apresentação formatada:
@@ -71,7 +73,9 @@ Ao renderizar, uma versão equivalente vira uma apresentação formatada:
 
 #### Hipótese
 
-Esperamos que o erro permaneça abaixo de `5%` para α = 0,05.
+Esperamos que o erro permaneça abaixo de 5% para α = 0,05.
+
+Os resultados são salvos em `summary.csv`.
 
 > A comparação deve ser feita com a solução analítica de referência.
 
@@ -85,7 +89,7 @@ $$
 
 O valor obtido foi **2,1%**, com desvio-padrão σ = 0,3%.
 
-![Comparação das soluções](examples/mini-project/results/figures/comparison.svg)
+![Comparação das soluções](examples/mini-project/results/figures/comparison.png)
 
 Você pode ler e editar o arquivo sem nenhuma ferramenta especial. Quando precisar compartilhar, [MyST](https://mystmd.org/) gera site e documentos, e [Marp](https://marp.app/) gera apresentações. Os comandos ficam em [Markdown e renderização](docs/markdown-rendering.md); [Pandoc](https://pandoc.org/) fica como opção de conversão quando necessário.
 

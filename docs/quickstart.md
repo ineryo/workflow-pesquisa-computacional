@@ -4,18 +4,11 @@ Este guia executa o exemplo que já vem no repositório. Para aplicar as ideias 
 
 ## O que você precisa
 
-Para executar o mini-projeto, use Git para clonar o repositório e Python para executar a análise:
+Para executar o mini-projeto, use Git para clonar o repositório e Python 3 para executar a análise. Para renderizar site, documento ou slides, você também precisará de Node.js com npm. Confira se essas ferramentas estão disponíveis:
 
 ```bash
 git --version
-python --version
-```
-
-O mini-projeto usa apenas a biblioteca padrão do Python, portanto não precisa de `requirements.txt` nem de ambiente virtual.
-
-Para renderizar site, documento ou slides, você também precisará de Node.js com npm. Eles são chamados por `npx`, sem instalação global:
-
-```bash
+python3 --version
 node --version
 npm --version
 ```
@@ -29,8 +22,13 @@ cd workflow-pesquisa-computacional
 
 ## 2. Execute o mini-projeto
 
+Na pasta do mini-projeto, crie um ambiente virtual, instale a dependência e execute a análise:
+
 ```bash
 cd examples/mini-project
+python3 -m venv .venv
+. .venv/bin/activate
+python -m pip install --requirement requirements.txt
 python src/analyze.py
 ```
 
@@ -39,7 +37,7 @@ O script lê `data/sample.csv` e produz:
 ```text
 results/tables/summary.csv
 results/tables/summary.md
-results/figures/comparison.svg
+results/figures/comparison.png
 ```
 
 ## 3. Leia o relatório em Markdown
@@ -52,7 +50,7 @@ Volte para a raiz do repositório e inicie o site:
 
 ```bash
 cd ../..
-npx --yes mystmd@latest start
+npx --yes mystmd@1.11.0 start
 ```
 
 O MyST mostra um endereço local no terminal. Deixe esse comando em execução e abra o endereço no navegador. Para encerrar o servidor, pressione `Ctrl+C`.
@@ -62,10 +60,10 @@ O MyST mostra um endereço local no terminal. Deixe esse comando em execução e
 Para gerar uma cópia DOCX do relatório:
 
 ```bash
-npx --yes mystmd@latest build examples/mini-project/docs/report.md --docx --strict
+npx --yes mystmd@1.11.0 build examples/mini-project/docs/report.md --docx --strict
 ```
 
-O arquivo gerado fica em `exports/mini-project-report.docx`. A figura é SVG; se ImageMagick não estiver instalado, o MyST pode avisar que a conversão da imagem precisa ser conferida no documento final.
+O arquivo gerado fica em `exports/mini-project-report.docx`.
 
 ## Opcional: experimente os slides
 

@@ -15,7 +15,7 @@ Os dados de exemplo estão em `../data/sample.csv`. O script `../src/analyze.py`
 
 ## Resultado
 
-![Comparação entre as soluções](../results/figures/comparison.svg)
+![Comparação entre as soluções](../results/figures/comparison.png)
 
 A tabela abaixo vem do arquivo gerado pela análise:
 

@@ -11,7 +11,7 @@ src/analyze.py
   ↓
 results/tables/summary.csv
 results/tables/summary.md
-results/figures/comparison.svg
+results/figures/comparison.png
   ↓
 docs/report.md e ../../docs/slides-example.md
 ```
@@ -20,13 +20,16 @@ docs/report.md e ../../docs/slides-example.md
 - `src/analyze.py` calcula o erro e produz uma tabela e uma figura.
 - `results/` guarda os artefatos produzidos pela análise.
 - `docs/report.md` usa a tabela e a figura no relatório.
-- `docs/slides-example.md` reutiliza a figura em uma apresentação.
+- `../../docs/slides-example.md` reutiliza a figura em uma apresentação.
 
 ## Execute
 
 Na pasta deste mini-projeto:
 
 ```bash
+python3 -m venv .venv
+. .venv/bin/activate
+python -m pip install --requirement requirements.txt
 python src/analyze.py
 ```
 
@@ -34,12 +37,4 @@ Depois abra `docs/report.md` e `../../docs/slides-example.md` para ver duas form
 
 ## Exporte o relatório
 
-Para gerar DOCX:
-
-```bash
-npx --yes mystmd@latest build docs/report.md --docx
-```
-
-Para gerar PDF, use o mesmo comando com `--pdf`. A rota de PDF precisa de LaTeX ou Typst instalado localmente.
-
-Os comandos para gerar slides estão em [`../../docs/markdown-rendering.md`](../../docs/markdown-rendering.md).
+Os comandos e requisitos para gerar DOCX, PDF ou slides estão em [`../../docs/markdown-rendering.md`](../../docs/markdown-rendering.md).
