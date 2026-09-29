@@ -2,47 +2,41 @@
 
 Este guia executa o exemplo que já vem no repositório. Para aplicar as ideias na sua própria pesquisa, adapte a estrutura e as práticas ao seu contexto; você não precisa usar este repositório inteiro como base.
 
-## O que você precisa
+## 1. Obtenha o projeto
 
-Para executar o mini-projeto, use Git e Python 3.11 ou superior. Para renderizar site, documento ou slides, use Node.js 18 ou superior com npm.
+Para clonar o repositório, você precisa de [Git](https://git-scm.com/downloads):
 
 ```bash
 git --version
-python3 --version
-node --version
-npm --version
-```
-
-## 1. Clone o repositório
-
-```bash
 git clone https://github.com/ineryo/workflow-pesquisa-computacional.git
 cd workflow-pesquisa-computacional
 ```
 
 ## 2. Execute o mini-projeto
 
-Na pasta do mini-projeto, crie um ambiente virtual, instale a dependência e execute a análise.
+Para executar a análise, você precisa de [Python](https://www.python.org/downloads/) 3.11 ou superior.
 
 No Windows com PowerShell:
 
 ```powershell
+py --version
 cd examples/mini-project
 py -m venv .venv
-.venv\Scripts\Activate.ps1
-python -m pip install -r requirements.txt
-python src/analyze.py
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe src\analyze.py
 ```
 
 No Linux ou macOS:
 
 ```bash
+python3 --version
 cd examples/mini-project
 python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install -r requirements.txt
-python src/analyze.py
+.venv/bin/python -m pip install -r requirements.txt
+.venv/bin/python src/analyze.py
 ```
+
+O ambiente `.venv` mantém a dependência do exemplo isolada do restante do sistema. Não é necessário ativá-lo: os comandos usam diretamente o Python desse ambiente.
 
 O script lê `data/sample.csv` e produz:
 
@@ -56,7 +50,14 @@ results/figures/comparison.png
 
 Abra `docs/report.md` para ver o documento-fonte. A figura usa Markdown comum; a tabela é incluída a partir do arquivo gerado quando o documento é processado pelo MyST.
 
-## 4. Veja o site local
+## 4. Renderize a documentação e os slides
+
+Para renderizar, você precisa de [Node.js](https://nodejs.org/en/download) em uma versão LTS atualmente suportada, com npm:
+
+```bash
+node --version
+npm --version
+```
 
 Volte para a raiz do repositório e inicie o site:
 

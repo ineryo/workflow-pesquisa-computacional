@@ -24,24 +24,22 @@ docs/report.md e ../../docs/slides-example.md
 
 ## Execute
 
-Este exemplo requer Python 3.11 ou superior. Na pasta deste mini-projeto, crie e ative um ambiente virtual antes de instalar a dependência.
+Este exemplo requer Python 3.11 ou superior. O ambiente `.venv` mantém a dependência isolada e não precisa ser ativado.
 
 No Windows com PowerShell:
 
 ```powershell
 py -m venv .venv
-.venv\Scripts\Activate.ps1
-python -m pip install -r requirements.txt
-python src/analyze.py
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe src\analyze.py
 ```
 
 No Linux ou macOS:
 
 ```bash
 python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install -r requirements.txt
-python src/analyze.py
+.venv/bin/python -m pip install -r requirements.txt
+.venv/bin/python src/analyze.py
 ```
 
 Depois abra `docs/report.md` e `../../docs/slides-example.md` para ver duas formas de comunicar o mesmo resultado.
