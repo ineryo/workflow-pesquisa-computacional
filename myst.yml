@@ -1,0 +1,36 @@
+version: 1
+
+project:
+  title: Workflow científico computacional leve
+  description: Implementação de referência Markdown-first para pesquisa computacional.
+  keywords:
+    - pesquisa computacional
+    - reprodutibilidade
+    - markdown
+    - git
+    - iniciação científica
+  bibliography:
+    - references.bib
+  toc:
+    - file: README.md
+    - file: docs/quickstart.md
+    - file: docs/markdown-rendering.md
+    - file: docs/git-basics.md
+    - file: docs/references.md
+    - title: Extras
+      children:
+        - file: docs/extras/tooling-landscape.md
+    - title: Decisões
+      children:
+        - file: docs/decisions/ADR-0001-markdown-first-research-workflow.md
+  exports:
+    - format: pdf
+      article: docs/quickstart.md
+      output: exports/quickstart.pdf
+    - format: docx
+      article: docs/quickstart.md
+      output: exports/quickstart.docx
+
+site:
+  template: book-theme
+  title: Workflow científico computacional leve

@@ -1,0 +1,12 @@
+# Python runtime artifacts
+__pycache__/
+*.py[cod]
+.venv/
+
+# Renderer build artifacts
+_build/
+exports/
+
+# Editor and operating-system files
+.DS_Store
+.vscode/
