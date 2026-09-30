@@ -24,17 +24,35 @@ A rede reúne materiais e iniciativas sobre práticas de pesquisa transparentes 
 
 ## Git e trabalho computacional
 
-### Software Carpentry: Version Control with Git
+### LabMAP / IME-USP — Primeiros passos para Git e GitHub
 
-Tutorial prático de Git voltado a pesquisadores. Use-o quando os comandos básicos deste repositório deixarem de ser suficientes.
+Material em português voltado a iniciação científica, mestrado, doutorado e publicações. É uma boa porta de entrada para quem quer usar Git e GitHub no contexto acadêmico.
 
-<https://swcarpentry.github.io/git-novice/>
+<https://labmap.ime.usp.br/tutoriais/2026-08-12-introducao-ao-git/>
 
 ### Kit de sobrevivência digital para cientistas
 
-Material do CompGeoLab/IAG-USP sobre Bash, Git/GitHub, Make, LaTeX e ciência aberta. É uma boa continuação quando você quiser aprender ferramentas de trabalho científico com mais profundidade.
+Material do CompGeoLab/IAG-USP sobre Bash, Git/GitHub, Make, LaTeX e ciência aberta. Ele situa Git e GitHub dentro de um workflow científico e é uma boa continuação quando você quiser aprender ferramentas de trabalho científico com mais profundidade.
 
 <https://github.com/compgeolab/kit>
+
+### Software Carpentry: Version Control with Git
+
+Tutorial prático de Git voltado a pesquisadores. Explica o ciclo diretório de trabalho → stage → commit quando os comandos básicos deste repositório deixarem de ser suficientes.
+
+<https://swcarpentry.github.io/git-novice/>
+
+### Pro Git em português
+
+Referência mais completa para continuar aprendendo controle de versão.
+
+<https://git-scm.com/book/pt-br/v2/Primeiros-Passos-Sobre-Controle-de-Vers%C3%A3o>
+
+### GitHub Docs — Git basics
+
+Útil para configuração e integração entre Git e GitHub.
+
+<https://docs.github.com/pt/get-started/git-basics>
 
 ## Figuras e comunicação
 

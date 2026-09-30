@@ -34,7 +34,7 @@ Os nomes podem mudar conforme o seu domínio. A separação só precisa ajudá-l
 
 ## Poucas práticas úteis desde o começo
 
-- Use Git para guardar o histórico sem criar várias cópias do mesmo arquivo. Veja [Git: o mínimo para começar](docs/git-basics.md).
+- **Use Git desde o começo.** Ele faz o histórico do projeto morar no próprio projeto, em vez de nos nomes `final.py`, `final2.py` e `agora-vai.py`. Se Git ainda é novo para você, veja [Git: o mínimo para começar](docs/git-basics.md).
 - Faça o código produzir tabelas e figuras; assim a origem de cada resultado fica mais fácil de reconhecer.
 - Escreva relatórios e slides em Markdown `.md` para manter o texto simples e versionável.
 - Adicione uma ferramenta nova quando ela resolver um problema real. Os nomes e caminhos ficam em [ferramentas opcionais](docs/extras/tooling-landscape.md).

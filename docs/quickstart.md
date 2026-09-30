@@ -4,7 +4,7 @@ Este guia executa o exemplo que já vem no repositório. Para aplicar as ideias 
 
 ## 1. Obtenha o projeto
 
-Para clonar o repositório, você precisa de [Git](https://git-scm.com/downloads):
+Para clonar o repositório, você precisa de [Git](https://git-scm.com/downloads). Se Git ainda é novo para você, veja [Git: o mínimo para começar](git-basics.md):
 
 ```bash
 git --version
