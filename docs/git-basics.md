@@ -176,7 +176,7 @@ git push
 - `git pull` traz mudanças do remoto.
 - `git push` publica commits locais no remoto.
 
-Quando você usa `git clone`, o remoto normalmente já fica configurado.
+Quando você usa `git clone`, o remoto normalmente já fica configurado. Se começou o projeto com `git init`, conecte-o ao serviço de hospedagem antes do primeiro `git push`; veja a documentação do serviço para adicionar um repositório remoto. Para GitHub, consulte [Adicionando o código localmente hospedado no GitHub](https://docs.github.com/pt/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github).
 
 ## Desfazer mudanças com cuidado
 
