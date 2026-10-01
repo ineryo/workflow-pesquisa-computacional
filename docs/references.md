@@ -54,6 +54,12 @@ Referência mais completa para continuar aprendendo controle de versão.
 
 <https://docs.github.com/pt/get-started/git-basics>
 
+### Learn Git Branching
+
+Aplicação interativa no navegador para praticar Git. É um recurso complementar, especialmente útil para explorar conceitos além do fluxo mínimo; como é fortemente voltada à navegação por comandos e a branching, não substitui o guia básico desta documentação.
+
+<https://learngitbranching.js.org/?locale=pt_BR>
+
 ## Figuras e comunicação
 
 ### Ten Simple Rules for Better Figures

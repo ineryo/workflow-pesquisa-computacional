@@ -207,6 +207,10 @@ Use a cheat sheet como referência rápida. O objetivo dela é lembrar os comand
 
 Até aqui, os commits existem **somente no seu computador**.
 
+A figura abaixo complementa o modelo anterior e mostra com mais detalhes como o repositório local se relaciona com o remoto.
+
+[![Diagrama complementar em português mostrando arquivos de trabalho, stage, histórico local e remoto, com git add, git commit, git push, git pull e git clone](assets/git-local-remoto-completo.png)](assets/git-local-remoto-completo.png)
+
 Quando há um remoto configurado, normalmente hospedado em um serviço como GitHub, você pode sincronizar os dois repositórios:
 
 ```bash
