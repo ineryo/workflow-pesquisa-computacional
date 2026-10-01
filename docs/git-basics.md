@@ -1,6 +1,6 @@
 # Git: o mínimo para começar
 
-Git é o controle de versão do projeto: ele guarda um histórico das mudanças. Em pesquisa computacional, isso ajuda a recuperar o raciocínio de uma análise, comparar versões e sincronizar trabalho sem depender de cópias espalhadas.
+Git é um sistema de controle de versão: ele registra marcos da evolução do projeto ao longo do tempo. Em pesquisa computacional, isso ajuda a entender o que mudou, comparar resultados e recuperar estados anteriores sem depender de várias cópias do mesmo arquivo.
 
 Em vez de:
 
@@ -13,45 +13,57 @@ analise_final2.py
 
 mantenha um único `analise.py`. **Com Git, a versão deixa de morar no nome do arquivo e passa a morar no histórico do projeto.**
 
-Git ajuda a saber o que mudou, registrar marcos, comparar versões, recuperar o raciocínio de uma análise e sincronizar o projeto com um remoto. Ele não é um backup mágico: o histórico só inclui o que foi registrado em commits e enviado ao remoto quando isso for necessário.
+Cada **commit** registra um estado dos arquivos versionados naquele momento, junto com informações como autor, data/hora e uma mensagem descrevendo a mudança. Assim, você pode comparar o projeto atual com marcos anteriores e recuperar uma versão antiga sem precisar manter `final.py`, `final2.py` ou `agora-vai.py`.
 
 ## Onde executar os comandos
 
 Os comandos `git ...` desta página são executados em um terminal aberto dentro da pasta do projeto. No Windows, você pode usar PowerShell ou Windows Terminal; no Linux e macOS, o Terminal. Os comandos Git mostrados aqui são os mesmos.
 
-## Git não é GitHub
+## Git, remoto e GitHub
+
+**Git** é o sistema de controle de versão que funciona no seu computador e registra o histórico do projeto.
+
+Um **remoto** é outro repositório Git, armazenado em outro lugar, com o qual o seu repositório local pode trocar commits. Em projetos pessoais e acadêmicos, é comum que esse remoto fique em um serviço na internet.
+
+**GitHub** é um dos serviços mais usados para hospedar repositórios Git. Ele mantém uma cópia do projeto e do histórico fora do seu computador e também facilita compartilhamento e colaboração.
 
 ```text
-Git
-→ controla o histórico no seu computador.
-
-GitHub, GitLab etc.
-→ hospedam repositórios remotos e facilitam compartilhamento e colaboração.
+seu computador                         remoto
+Git + arquivos + histórico   ←→   ex.: GitHub
 ```
 
-Você pode usar Git sem GitHub. Um remoto é útil quando quiser sincronizar, compartilhar ou colaborar.
+Você pode usar Git sem GitHub. É comum pensar no remoto como uma “cópia do projeto na nuvem”, mas ele não recebe automaticamente tudo que está na sua pasta: primeiro as mudanças precisam ser registradas em commits e depois enviadas ao remoto.
+
+Ter os commits também em um remoto reduz o risco de perder todo o histórico caso algo aconteça com o computador local, mas Git/GitHub não substituem necessariamente uma política completa de backup.
 
 ## Configuração inicial
 
-Primeiro, confira se o Git está instalado e identifique os commits que você fizer:
+Primeiro, confira se o Git está instalado:
 
 ```bash
 git --version
+```
+
+Se o comando não for reconhecido, instale o Git seguindo as [instruções oficiais para seu sistema operacional](https://git-scm.com/install/).
+
+Depois, configure o nome e o e-mail que identificarão os commits que você fizer:
+
+```bash
 git config --global user.name "Seu Nome"
 git config --global user.email "seu@email.com"
 ```
 
-O nome e o e-mail identificam seus commits. Essa configuração é feita uma vez por computador, salvo quando você quiser alterá-la.
+Essa configuração normalmente precisa ser feita apenas uma vez para o seu usuário no computador, salvo quando você quiser alterá-la.
 
 ## Criar ou obter um repositório
 
-Se o seu projeto local ainda não usa Git, abra o terminal na pasta dele e inicialize o repositório:
+Se o seu projeto já existe como uma pasta local, mas ainda não usa Git, abra o terminal dentro dela e inicialize o repositório:
 
 ```bash
 git init
 ```
 
-Se o projeto já existe em um repositório remoto, obtenha uma cópia dele:
+Se o projeto Git já existe em outro lugar, obtenha uma cópia dele:
 
 ```bash
 git clone <url>
@@ -61,7 +73,11 @@ Normalmente é **um ou outro**: use `git init` para começar o histórico de uma
 
 ## Modelo mental do Git
 
-O Git separa o que você está editando do que será registrado no próximo marco:
+O Git separa três ideias importantes:
+
+1. os arquivos em que você está trabalhando;
+2. a seleção do que entrará no próximo marco;
+3. o histórico de marcos já registrados.
 
 ```text
 arquivos de trabalho
@@ -73,27 +89,31 @@ stage
       │ git commit
       ▼
 histórico local
-      │
-      │ git push
-      ▼
-remoto
-
-git pull traz mudanças do remoto para o repositório local.
 ```
 
-Também vale lembrar:
+O **stage** é simplesmente a seleção do que você quer incluir no próximo commit.
+
+Também vale associar cada comando a uma pergunta:
 
 ```text
 git diff
-→ mudanças ainda não adicionadas ao stage
+→ o que mudou nos arquivos de trabalho?
+
+git add
+→ quais mudanças quero incluir no próximo commit?
 
 git diff --staged
-→ o que está preparado para o próximo commit
+→ o que exatamente já escolhi para o próximo commit?
+
+git commit
+→ registre esse marco no histórico
 ```
 
-[![Cheat sheet em português com o fluxo básico de Git e os principais comandos de versionamento](assets/git-cheat-sheet-ptbr.png)](assets/git-cheat-sheet-ptbr.png)
+A relação entre o que acontece no seu computador e o remoto pode ser visualizada assim:
 
-Use a cheat sheet como referência rápida; as seções abaixo explicam o que cada etapa significa.
+[![Diagrama do fluxo Git entre arquivos de trabalho, stage, histórico local e um remoto como GitHub](assets/git-local-remoto.png)](assets/git-local-remoto.png)
+
+No computador acontecem a edição, o `git add` e o `git commit`. O `git push` envia commits ao remoto; o `git pull` traz mudanças do remoto para o seu repositório local.
 
 ## O ciclo básico
 
@@ -106,7 +126,7 @@ git diff
 git add src/analyze.py
 git diff --staged
 
-git commit -m "add baseline orbital analysis"
+git commit -m "implementa cálculo do erro quadrático médio"
 
 git log --oneline
 ```
@@ -119,52 +139,75 @@ diff
 → o que eu mudei?
 
 add
-→ quais mudanças entram no próximo registro?
+→ o que quero incluir no próximo marco?
 
 diff --staged
 → o que exatamente será registrado?
 
 commit
-→ crie o marco
+→ registre o marco
 
 log
 → veja os marcos anteriores
 ```
 
-`git add .` também adiciona as mudanças da pasta atual. Mesmo assim, escolher arquivos individualmente ajuda quando mudanças diferentes devem virar commits diferentes.
+`git add .` adiciona as mudanças da pasta atual ao stage. Mesmo assim, escolher arquivos individualmente é útil quando alterações diferentes devem virar commits diferentes.
 
-### O que é um commit?
+## O que é um commit?
 
-Salvar o arquivo no editor e fazer um commit são coisas diferentes. Salvar atualiza o arquivo no disco; o commit registra um marco no histórico Git.
+Salvar um arquivo e fazer um commit são coisas diferentes.
 
-Uma mensagem de commit descreve o marco criado, por exemplo:
+Quando você salva no editor, o arquivo atual é atualizado no seu computador. Quando faz um commit, registra um **marco no histórico do projeto**: um estado dos arquivos versionados naquele momento, acompanhado de uma mensagem que ajuda a explicar o que mudou desde o marco anterior.
+
+Por exemplo, em um momento você pode registrar:
 
 ```text
-add baseline anomaly analysis
-fix pressure normalization
-update figure after filtering
-document experiment assumptions
+implementa cálculo do erro quadrático médio
 ```
 
-Evite mensagens vagas como `changes`, `update` ou `final`: elas não ajudam você a entender depois por que aquele marco existe.
+e, depois de encontrar um problema:
+
+```text
+corrige cálculo do erro quadrático médio
+```
+
+Meses depois, essas mensagens ajudam a reconstruir como a análise evoluiu e por que determinados resultados mudaram.
+
+Outros exemplos úteis:
+
+```text
+corrige conversão de pressão para MPa
+atualiza figura após filtrar os dados
+documenta hipótese usada no experimento
+```
+
+Evite mensagens vagas como `changes`, `update` ou `final`: elas dizem pouco sobre o que aconteceu naquele marco.
 
 ## Marcos reais em pesquisa
 
-Um commit não precisa ser feito para cada tecla digitada. Registre uma etapa quando ela tiver um propósito claro, como:
+Um commit não precisa ser feito para cada pequena edição. Registre um marco quando a mudança tiver um propósito claro, como:
 
 - primeira análise funcionando;
 - entrada de um novo conjunto de dados;
 - correção de uma unidade;
 - criação de uma nova figura;
 - atualização das conclusões;
-- versão usada em reunião;
+- versão usada em uma reunião;
 - versão submetida.
 
-Esses marcos tornam mais fácil relacionar código, dados adequados e resultados persistidos com a decisão ou comunicação para a qual foram usados.
+Esses marcos tornam mais fácil relacionar código, dados e resultados com as decisões e comunicações produzidas durante a pesquisa.
+
+## Cheat sheet
+
+[![Cheat sheet em português com o fluxo básico de Git e os principais comandos de versionamento](assets/git-cheat-sheet-ptbr.png)](assets/git-cheat-sheet-ptbr.png)
+
+Use a cheat sheet como referência rápida. O objetivo dela é lembrar os comandos depois que o modelo mental já estiver claro.
 
 ## Remoto: `pull` e `push`
 
-Depois de trabalhar localmente, consulte e sincronize o remoto quando necessário:
+Até aqui, os commits existem **somente no seu computador**.
+
+Quando há um remoto configurado, normalmente hospedado em um serviço como GitHub, você pode sincronizar os dois repositórios:
 
 ```bash
 git remote -v
@@ -172,11 +215,13 @@ git pull
 git push
 ```
 
-- `git remote -v` mostra os remotos configurados.
-- `git pull` traz mudanças do remoto.
-- `git push` publica commits locais no remoto.
+- `git remote -v` mostra quais remotos estão configurados.
+- `git pull` traz do remoto mudanças que chegaram lá e as integra ao seu trabalho local.
+- `git push` envia ao remoto os commits locais que ainda não estão lá.
 
-Quando você usa `git clone`, o remoto normalmente já fica configurado. Se começou o projeto com `git init`, conecte-o ao serviço de hospedagem antes do primeiro `git push`; veja a documentação do serviço para adicionar um repositório remoto. Para GitHub, consulte [Adicionando o código localmente hospedado no GitHub](https://docs.github.com/pt/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github).
+Depois de um `git push`, esses commits passam a existir também no remoto. Essa cópia externa é útil caso algo aconteça com o computador local, mas lembre: arquivos que nunca foram commitados — ou commits que nunca foram enviados — não aparecerão no remoto.
+
+Quando você usa `git clone`, o remoto normalmente já fica configurado. Se começou o projeto com `git init`, será necessário conectá-lo ao serviço de hospedagem antes do primeiro `git push`. Para GitHub, consulte [Adicionando código hospedado localmente ao GitHub](https://docs.github.com/pt/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github).
 
 ## Desfazer mudanças com cuidado
 
@@ -198,20 +243,9 @@ Você também pode usar:
 git restore <arquivo>
 ```
 
-**Atenção:** esse comando descarta as mudanças locais não commitadas daquele arquivo. Leia `git status` e `git diff` antes de usá-lo.
+**Atenção:** esse comando descarta as mudanças locais ainda não commitadas daquele arquivo. Confira `git status` e `git diff` antes de usá-lo.
 
-## O que não deve entrar no histórico
-
-Nem tudo que aparece na pasta do projeto deve ser versionado. Em geral, mantenha fora do histórico:
-
-- ambientes virtuais como `.venv/`;
-- caches e builds temporários;
-- credenciais;
-- dados proprietários ou confidenciais;
-- arquivos enormes sem necessidade;
-- outputs descartáveis que não fazem parte dos resultados persistidos.
-
-Use `.gitignore` para indicar arquivos e pastas que o Git deve ignorar. Para dados protegidos, mantenha o material em armazenamento autorizado separado, como descrito no [README](../README.md#nem-todo-dado-deve-estar-no-projeto).
+> Não publique credenciais ou dados protegidos no repositório. Para dados restritos, siga a orientação específica do [README](../README.md#nem-todo-dado-deve-estar-no-projeto).
 
 ## Continue aprendendo
 
